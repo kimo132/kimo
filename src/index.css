@@ -1,0 +1,581 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+/* RTL Support */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+@keyframes fallingStar {
+  0% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.star-field {
+  perspective: 1000px;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fallingStar 4s linear;
+  transform-style: preserve-3d;
+}
+
+.star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px currentColor;
+  opacity: 0.7;
+}
+
+.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400%;
+  height: 1px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0.3;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+.social-whatsapp:hover {
+  @apply bg-green-500 text-white;
+}
+
+.social-facebook:hover {
+  @apply bg-blue-600 text-white;
+}
+
+.social-github:hover {
+  @apply bg-gray-800 text-white dark:bg-gray-100 dark:text-gray-900;
+}
+
+.social-linkedin:hover {
+  @apply bg-blue-700 text-white;
+}
+
+.social-discord:hover {
+  @apply bg-[#5865F2] text-white;
+}
+
+.social-email:hover {
+  @apply bg-red-500 text-white;
+}
+
+.stat-card {
+  @apply p-4 rounded-lg backdrop-blur-md transition-all duration-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.solo-leveling-text {
+  @apply text-blue-400;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.05em;
+}
+
+.command-category {
+  @apply mb-6 p-4 rounded-lg transition-all duration-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.command-category-title {
+  @apply text-lg font-bold mb-4 flex items-center gap-2;
+  color: theme('colors.indigo.400');
+}
+
+.light-theme {
+  background: linear-gradient(135deg, #f0f4ff, #e6eeff, #f0f4ff);
+}
+
+.name-animation {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.name-animation::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+  filter: blur(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.name-animation:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.name-animation:hover::before {
+  opacity: 0.3;
+}
+
+.server-button {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.server-button.active {
+  @apply bg-indigo-500 text-white;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.server-button:hover:not(.active) {
+  @apply transform scale-105;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+}
+
+.command-category-button {
+  @apply w-full px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-between;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.command-category-button:hover {
+  @apply transform scale-105;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+}
+
+.command-category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.command-category-content.open {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.profile-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Click effect styles */
+.click-effect {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: clickRipple 0.8s ease-out;
+  background: radial-gradient(circle, 
+    rgba(147, 51, 234, 0.3) 0%, 
+    rgba(236, 72, 153, 0.2) 35%, 
+    rgba(59, 130, 246, 0.1) 70%, 
+    transparent 100%
+  );
+}
+
+@keyframes clickRipple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+/* Join server button styles */
+.join-server-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 mt-4;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.join-server-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.join-server-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+}
+
+.join-server-button:hover::before {
+  left: 100%;
+}
+
+.profile-frame {
+  position: absolute;
+  inset: -10px;
+  border: 4px solid;
+  border-image: linear-gradient(
+    45deg,
+    #ffd700,
+    #ffa500,
+    #daa520,
+    #ffd700
+  ) 1;
+  border-radius: 50%;
+  animation: rotateGradient 4s linear infinite;
+}
+
+.profile-crown {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 45px;
+  background: linear-gradient(45deg, #ffd700, #daa520);
+  clip-path: polygon(50% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+  z-index: 2;
+}
+
+.profile-crown::before {
+  content: '👑';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+@keyframes rotateGradient {
+  0% {
+    border-image: linear-gradient(
+      0deg,
+      #ffd700,
+      #ffa500,
+      #daa520,
+      #ffd700
+    ) 1;
+  }
+  100% {
+    border-image: linear-gradient(
+      360deg,
+      #ffd700,
+      #ffa500,
+      #daa520,
+      #ffd700
+    ) 1;
+  }
+}
+
+.language-button {
+  @apply px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.language-button:hover,
+.language-button.active {
+  @apply transform scale-105;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+}
+
+.language-button img {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.bot-category-button {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.bot-category-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.bot-category-button:hover:not(.active) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+}
+
+.bot-category-button:hover::before {
+  left: 100%;
+}
+
+.bot-category-button.active {
+  display: none;
+}
+
+.server-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.server-info.visible {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.profile-tooltip {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.profile-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba(255,255,255,0.1);
+}
+
+.profile-container:hover .profile-tooltip {
+  transform: translateX(-50%) scale(1);
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fallingStar 4s linear;
+  transform-style: preserve-3d;
+}
+
+.star.glowing {
+  animation: starGlow 0.5s ease-out;
+}
+
+@keyframes starGlow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.8;
+    box-shadow: 0 0 20px currentColor;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.section-title {
+  @apply text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text;
+}
+
+.image-transition {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.image-transition.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.try-command-button {
+  @apply px-3 py-1 rounded-md text-sm font-medium transition-all duration-300;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.try-command-button:hover {
+  @apply transform scale-105;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.add-bot-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 mt-4;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.add-bot-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.add-bot-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+}
+
+.add-bot-button:hover::before {
+  left: 100%;
+}
+
+.commands-title {
+  @apply text-xl font-semibold text-center mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text;
+}
