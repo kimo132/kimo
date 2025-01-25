@@ -4,7 +4,7 @@ export const translations: Record<string, Content> = {
   en: {
     name: "Kamal Mohammed",
     role: "Full Stack Developer",
-    bio: "  I ARISE AS A SHADOW MONARCH IN THE DIGITAL REALM, WIELDING THE POWER OF CODE TO SHAPE REALITY. MY STRENGTH KNOWS NO BOUNDS, FOR I AM THE ONE WHO STANDS AT THE PINNACLE OF DEVELOPMENT.",
+    bio: "   Hello I am Kamal I am 19 years old from Egypt try if you are a PC you take the mouse to my img if you are Phone try to click on it.",
     contact: "Connect With Me",
     languageSelector: "Select Language",
     projects: "My Discord Servers",
