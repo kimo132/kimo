@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Facebook, Github, Linkedin, Mail, MessageCircle, Globe, Moon, Sun, Bot, Users, Hash, MessageSquare, Info, Command, ChevronDown, ChevronUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Facebook, Github, Linkedin, Mail, MessageCircle, Globe, Moon, Sun, Bot, Users, Hash, MessageSquare, Info, Command, ChevronDown, ChevronUp, Gamepad } from 'lucide-react';
 import { Language } from './types';
 import { translations } from './translations';
 
 const profileImages = [
   "https://cdn.discordapp.com/avatars/333945284692279297/31732a171ed05c9538be893302b63951.webp?size=4096",
-  "https://th.bing.com/th/id/OIP.yOoOlRkcBZmpRfP3AlPD4QHaEo?rs=1&pid=ImgDetMain",
-  "https://th.bing.com/th/id/OIP.grPjPpcv9dEdVdNJiVnGIwAAAA?pid=ImgDet&w=184&h=114&c=7&dpr=1.3"
+  "https://cdn.discordapp.com/avatars/333945284692279297/31732a171ed05c9538be893302b63951.webp?size=4096",
+  "https://cdn.discordapp.com/avatars/333945284692279297/31732a171ed05c9538be893302b63951.webp?size=4096"
 ];
 
 const languageFlags = {
@@ -183,8 +184,8 @@ const serverDescriptions: Record<ServerType, Record<Language, { title: string; d
       description: "A vibrant community for gamers to connect, compete, and have fun together."
     },
     ar: {
-      title: "سيرفر الكومينتي",
-      description: "قاعد ماتسوي شي والوضع عندك ملل تعال جيتك بالحل ادخل هون في سيرفرنا للكومينتي واستمتع بالهدايا والفعاليات اليومية"
+      title: "مجتمع الألعاب",
+      description: "مجتمع نابض بالحياة للاعبين للتواصل والمنافسة والاستمتاع معًا."
     },
     ru: {
       title: "Игровое Сообщество",
@@ -238,6 +239,11 @@ function App() {
   });
   const content = translations[language];
   const isRTL = language === 'ar';
+
+  useEffect(() => {
+    setActiveServer('shop');
+    setIsServerInfoVisible(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -351,7 +357,7 @@ function App() {
               onClick={() => setCurrentImageIndex((prev) => (prev + 1) % profileImages.length)}
             />
           </div>
-          <h1 className="name-animation text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text">
+          <h1 className="name-animation text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text font-ruqaa">
             {content.name}
           </h1>
           <h2 className="text-xl mb-6 font-medium opacity-90">
@@ -422,7 +428,7 @@ function App() {
             </div>
             <div className="text-center">
               <a
-                href={`https://discord.gg/${activeServer === 'gaming' ? '873058874796671037' : 'your-other-server-id'}`}
+                href={`https://discord.gg/${activeServer === 'gaming' ? '873058874796671037' : 'scammers' }`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="join-server-button"
@@ -432,6 +438,16 @@ function App() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link 
+            to="/sudoku"
+            className="play-game-button inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+          >
+            {content.playGame}
+            <Gamepad className="w-5 h-5" />
+          </Link>
         </div>
 
         <h3 className="section-title fade-in-up mt-12">

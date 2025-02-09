@@ -9,6 +9,7 @@ export interface Content {
   languageSelector: string;
   projects: string;
   copyright: string;
+  playGame: string;
   serverInfo: ServerInfo;
   botInfo: BotInfo;
   servers: {
@@ -27,5 +28,13 @@ export interface Content {
   sections: {
     commands: string;
     servers: string;
+  };
+  sudoku: {
+    back: string;
+    noteMode: string;
+    completed: string;
+    invalid: string;
+    newGame: string;
+    hint: string;
   };
 }

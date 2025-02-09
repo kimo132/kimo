@@ -4,11 +4,12 @@ export const translations: Record<string, Content> = {
   en: {
     name: "Kamal Mohammed",
     role: "Full Stack Developer",
-    bio: "   Hello I am Kamal I am 19 years old from Egypt try if you are a PC you take the mouse to my img if you are Phone try to click on it.",
+    bio: "I ARISE AS A SHADOW MONARCH IN THE DIGITAL REALM, WIELDING THE POWER OF CODE TO SHAPE REALITY. MY STRENGTH KNOWS NO BOUNDS, FOR I AM THE ONE WHO STANDS AT THE PINNACLE OF DEVELOPMENT.",
     contact: "Connect With Me",
     languageSelector: "Select Language",
     projects: "My Discord Servers",
     copyright: "© 2024 Kamal Mohammed. All rights reserved.",
+    playGame: "Want to play?",
     tooltips: {
       profile: "Peace be upon Prophet Muhammad ﷺ",
       tryCommand: "Try Command"
@@ -56,16 +57,51 @@ export const translations: Record<string, Content> = {
         fun: "Fun",
         leveling: "Leveling"
       }
+    },
+    sudoku: {
+      back: "Back to Home",
+      noteMode: "Note Mode",
+      clearNotes: "Clear Notes",
+      completed: "Puzzle Completed!",
+      invalid: "Invalid Solution",
+      newGame: "New Game",
+      hint: "Get Hint",
+      points: "Points",
+      hintsLeft: "Hints Available",
+      mistakes: "Mistakes",
+      playAgain: "Play Again?",
+      showSolution: "Show Solution",
+      gameOver: "Game Over!",
+      levels: {
+        easy: "Easy",
+        medium: "Medium",
+        hard: "Hard",
+        expert: "Expert"
+      },
+      rewards: {
+        easy: "15 points",
+        medium: "30 points",
+        hard: "60 points",
+        expert: "100 points"
+      },
+      buyPoints: {
+        title: "Buy Points",
+        description: "Get more points via Vodafone Cash",
+        phone: "01011810767",
+        rate: "100 points = 5 EGP",
+        button: "Purchase Points"
+      }
     }
   },
   ar: {
     name: "كمال محمد",
     role: "مطور ويب متكامل",
-    bio: "  مرحبا انا كمال عمري 19 عام من مصر جرب اذا انت بيسي تودي الماوس علي الصورة واذا انت فون جرب تضغط عليها وجزاكم الله خير.",
+    bio: "أنهض كملك الظل في العالم الرقمي، أستخدم قوة الكود لتشكيل الواقع. قوتي لا حدود لها، فأنا من يقف في قمة التطوير.",
     contact: "تواصل معي",
     languageSelector: "اختر اللغة",
-    projects: "سيرفرات الديسكورد",
+    projects: "خوادم الديسكورد",
     copyright: "© 2024 كمال محمد. جميع الحقوق محفوظة.",
+    playGame: "تريد أن تلعب؟",
     tooltips: {
       profile: "اللهم صلِ على سيدنا محمد ﷺ",
       tryCommand: "جرب الأمر"
@@ -79,9 +115,9 @@ export const translations: Record<string, Content> = {
       servers: "سيرفرات الديسكورد"
     },
     servers: {
-      gaming: "سيرفر الكومينتي",
-      shop: "سيرفر الشوب",
-      scammers: "سيرفر الوساطه"
+      gaming: "مجتمع الألعاب",
+      shop: "منصة التداول",
+      scammers: "تقارير النصابين"
     },
     serverInfo: {
       title: "مجتمع الديسكورد",
@@ -113,16 +149,51 @@ export const translations: Record<string, Content> = {
         fun: "ترفيه",
         leveling: "المستويات"
       }
+    },
+    sudoku: {
+      back: "العودة إلى الرئيسية",
+      noteMode: "وضع الملاحظات",
+      clearNotes: "مسح الملاحظات",
+      completed: "تم حل اللغز!",
+      invalid: "الحل غير صحيح",
+      newGame: "لعبة جديدة",
+      hint: "احصل على تلميح",
+      points: "النقاط",
+      hintsLeft: "التلميحات المتاحة",
+      mistakes: "الأخطاء",
+      playAgain: "تريد اللعب مجددا؟",
+      showSolution: "عرض الحل",
+      gameOver: "انتهت اللعبة!",
+      levels: {
+        easy: "سهل",
+        medium: "متوسط",
+        hard: "صعب",
+        expert: "خبير"
+      },
+      rewards: {
+        easy: "15 نقطة",
+        medium: "30 نقطة",
+        hard: "60 نقطة",
+        expert: "100 نقطة"
+      },
+      buyPoints: {
+        title: "شراء نقاط",
+        description: "احصل على المزيد من النقاط عبر فودافون كاش",
+        phone: "01011810767",
+        rate: "100 نقطة = 5 جنيه مصري",
+        button: "شراء نقاط"
+      }
     }
   },
   ru: {
     name: "Камал Мохаммед",
     role: "Фулстек Разработчик",
-    bio: "  Я ВОССТАЮ КАК МОНАРХ ТЕНЕЙ В ЦИФРОВОМ МИРЕ, ВЛАДЕЯ СИЛОЙ КОДА ДЛЯ ФОРМИРОВАНИЯ РЕАЛЬНОСТИ. МОЯ СИЛА НЕ ЗНАЕТ ГРАНИЦ, ИБО Я ТОТ, КТО СТОИТ НА ВЕРШИНЕ РАЗРАБОТКИ.",
+    bio: "Я ВОССТАЮ КАК МОНАРХ ТЕНЕЙ В ЦИФРОВОМ МИРЕ, ВЛАДЕЯ СИЛОЙ КОДА ДЛЯ ФОРМИРОВАНИЯ РЕАЛЬНОСТИ. МОЯ СИЛА НЕ ЗНАЕТ ГРАНИЦ, ИБО Я ТОТ, КТО СТОИТ НА ВЕРШИНЕ РАЗРАБОТКИ.",
     contact: "Свяжитесь со мной",
     languageSelector: "Выберите язык",
     projects: "Мои Серверы Discord",
     copyright: "© 2024 Камал Мохаммед. Все права защищены.",
+    playGame: "Хотите поиграть?",
     tooltips: {
       profile: "Мир и благословение Пророку Мухаммаду ﷺ",
       tryCommand: "Попробовать команду"
@@ -169,6 +240,40 @@ export const translations: Record<string, Content> = {
         music: "Музыка",
         fun: "Развлечения",
         leveling: "Уровни"
+      }
+    },
+    sudoku: {
+      back: "Вернуться на главную",
+      noteMode: "Режим заметок",
+      clearNotes: "Очистить заметки",
+      completed: "Головоломка решена!",
+      invalid: "Неверное решение",
+      newGame: "Новая игра",
+      hint: "Получить подсказку",
+      points: "Очки",
+      hintsLeft: "Доступные подсказки",
+      mistakes: "Ошибки",
+      playAgain: "Сыграть снова?",
+      showSolution: "Показать решение",
+      gameOver: "Игра окончена!",
+      levels: {
+        easy: "Легкий",
+        medium: "Средний",
+        hard: "Сложный",
+        expert: "Эксперт"
+      },
+      rewards: {
+        easy: "15 очков",
+        medium: "30 очков",
+        hard: "60 очков",
+        expert: "100 очков"
+      },
+      buyPoints: {
+        title: "Купить очки",
+        description: "Получите больше очков через Vodafone Cash",
+        phone: "01011810767",
+        rate: "100 очков = 5 EGP",
+        button: "Купить очки"
       }
     }
   }
