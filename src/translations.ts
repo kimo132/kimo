@@ -4,7 +4,7 @@ export const translations: Record<string, Content> = {
   en: {
     name: "Kamal Mohammed",
     role: "Full Stack Developer",
-    bio: "I ARISE AS A SHADOW MONARCH IN THE DIGITAL REALM, WIELDING THE POWER OF CODE TO SHAPE REALITY. MY STRENGTH KNOWS NO BOUNDS, FOR I AM THE ONE WHO STANDS AT THE PINNACLE OF DEVELOPMENT.",
+    bio: "  Hello, I am Kamal Mohamed from Egypt. I am 19 years old. I study Information Technology (IT). These are some of the servers that I own on Discord, and information about my most famous bot is below. If you want to play some games, you can click on the “Do you want to play” button? I wish you success with my regards.",
     contact: "Connect With Me",
     languageSelector: "Select Language",
     projects: "My Discord Servers",
@@ -96,10 +96,10 @@ export const translations: Record<string, Content> = {
   ar: {
     name: "كمال محمد",
     role: "مطور ويب متكامل",
-    bio: "أنهض كملك الظل في العالم الرقمي، أستخدم قوة الكود لتشكيل الواقع. قوتي لا حدود لها، فأنا من يقف في قمة التطوير.",
+    bio: "  مرحبا انا كمال محمد من مصر عمري 19 عام ادرس تقنية المعلومات ( IT ) وهذه بعض الخوادم التي املكها علي الديسكورد ومعلومات عن اشهر بوت خاص بي بالاسفل وان كنت تريد لعب بعض الالعاب يمكنك الضغط علي زر تريد اللعب؟ اتمني لك التوفيق مع تحياتي.",
     contact: "تواصل معي",
     languageSelector: "اختر اللغة",
-    projects: "خوادم الديسكورد",
+    projects: "سيرفرات الديسكورد",
     copyright: "© 2024 كمال محمد. جميع الحقوق محفوظة.",
     playGame: "تريد أن تلعب؟",
     tooltips: {
@@ -115,9 +115,9 @@ export const translations: Record<string, Content> = {
       servers: "سيرفرات الديسكورد"
     },
     servers: {
-      gaming: "مجتمع الألعاب",
-      shop: "منصة التداول",
-      scammers: "تقارير النصابين"
+      gaming: "سيرفر الكومينتي",
+      shop: "سيرفر الشوب",
+      scammers: "سيرفر الوساطة والتشهير"
     },
     serverInfo: {
       title: "مجتمع الديسكورد",
@@ -188,7 +188,7 @@ export const translations: Record<string, Content> = {
   ru: {
     name: "Камал Мохаммед",
     role: "Фулстек Разработчик",
-    bio: "Я ВОССТАЮ КАК МОНАРХ ТЕНЕЙ В ЦИФРОВОМ МИРЕ, ВЛАДЕЯ СИЛОЙ КОДА ДЛЯ ФОРМИРОВАНИЯ РЕАЛЬНОСТИ. МОЯ СИЛА НЕ ЗНАЕТ ГРАНИЦ, ИБО Я ТОТ, КТО СТОИТ НА ВЕРШИНЕ РАЗРАБОТКИ.",
+    bio: "  Здравствуйте, я Камаль Мохамед из Египта. Мне 19 лет. Я изучаю информационные технологии (ИТ). Вот некоторые из серверов, которыми я владею на Discord, и информация о моем самом известном боте приведена ниже. Если вы хотите поиграть в некоторые игры, вы можете нажать кнопку «Хотите поиграть?» желаю успехов с уважением.",
     contact: "Свяжитесь со мной",
     languageSelector: "Выберите язык",
     projects: "Мои Серверы Discord",
