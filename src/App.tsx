@@ -16,6 +16,12 @@ const languageFlags = {
   ru: "https://flagcdn.com/w40/ru.png"
 };
 
+const serverInvites: Record<ServerType, string> = {
+  gaming: "gaming-invite",
+  shop: "shop-invite",
+  scammers: "scammers-invite"
+};
+
 type ServerType = 'gaming' | 'shop' | 'scammers';
 
 interface ServerStats {
@@ -427,15 +433,15 @@ function App() {
               </div>
             </div>
             <div className="text-center">
-              <a
-                href={`https://discord.gg/${activeServer === 'gaming' ? '873058874796671037' : 'scammers' }`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="join-server-button"
-              >
-                {content.serverInfo.joinButton}
-                <DiscordIcon className="w-5 h-5" />
-              </a>
+<a
+  href={`https://discord.gg/${serverInvites[activeServer]}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="join-server-button"
+>
+  {content.serverInfo.joinButton}
+  <DiscordIcon className="w-5 h-5" />
+</a>
             </div>
           </div>
         </div>
